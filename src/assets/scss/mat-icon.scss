@@ -1,0 +1,28 @@
+/* define all generic styling for material icons here
+ */
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+}
+
+.mat-icon-16 {
+  @include md-icon-size(16px);
+}
+
+.mat-icon-24 {
+  @include md-icon-size(24px);
+}
+
+.mat-icon-32 {
+  @include md-icon-size(32px);
+}
+
+.mat-icon-48 {
+  @include md-icon-size(48px);
+}
+
+.mat-icon-128 {
+  @include md-icon-size(128px);
+}

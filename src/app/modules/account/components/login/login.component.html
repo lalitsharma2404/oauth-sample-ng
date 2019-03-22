@@ -1,0 +1,60 @@
+<section class="mt-3">
+  <div fxLayout="column" fxFlex="30%" fxFlex.sm="50%" fxFlexOffset.sm="25%" fxFlex.xs="90%" fxFlexOffset="35%"
+       fxFlexOffset.xs="5%">
+    <!-- Card -->
+    <mat-card>
+      <!-- Card body -->
+      <mat-card-content class="alternate-theme">
+        <form [formGroup]="loginForm" (submit)="login()" novalidate class="auth">
+          <div class="form-container">
+            <div class="text-center mb-4">
+              LOGIN
+            </div>
+
+            <mat-form-field appearance="outline">
+              <!--<mat-icon matPrefix class="grey-text">lock</mat-icon>-->
+              <mat-label>Email</mat-label>
+              <input type="email" matInput placeholder="Email" formControlName="email" name="email" #emailSpy/>
+              <mat-error *ngIf="loginForm.get('email').hasError('required') && loginForm.get('email')?.touched">Email is
+                required
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email').hasError('invalidEmail')">Please enter a valid email</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="my-2" appearance="outline">
+              <!--<mat-icon matPrefix  class="grey-text">vpn_key</mat-icon>-->
+              <mat-label>Password</mat-label>
+              <input [type]="hide ? 'text' : 'password'" matInput placeholder="Password" formControlName="secret"
+                     #passwordSpy/>
+              <mat-icon matSuffix (click)="hide = !hide" class="show-password grey-text">{{hide ? 'visibility' :
+                'visibility_off'}}
+              </mat-icon>
+              <mat-error *ngIf="loginForm.get('secret').hasError('required') && loginForm.get('secret')?.touched">
+                Password is required
+              </mat-error>
+              <mat-error
+                *ngIf="loginForm.get('secret').hasError('minlength') || loginForm.get('secret').hasError('maxlength')">
+                Password length minimum 6 characters
+              </mat-error>
+            </mat-form-field>
+
+            <div class="text-center mb-4">
+              <button type="submit" mat-flat-button color="warn" name="login" class="btn-block py-2"
+                      [disabled]="!loginForm.valid">
+                <ng-container *ngIf="!isLoading">LOGIN</ng-container>
+                <ng-container *ngIf="isLoading">
+                  <mat-spinner style="margin:0.35rem auto;" color="accent" mode="indeterminate"
+                               diameter="24"></mat-spinner>
+                </ng-container>
+              </button>
+            </div>
+            <a class="for-pass mb-4 text-center" routerLink="/forgot-password">Forgot Password</a>
+          </div>
+        </form>
+        <!-- End form body -->
+      </mat-card-content>
+      <!-- End Card body -->
+    </mat-card>
+    <!-- End Card -->
+  </div>
+</section>

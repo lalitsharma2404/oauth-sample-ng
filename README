@@ -1,0 +1,11 @@
+# Project setup
+install npm
+
+# start project
+npm start
+
+# Environment setup
+set API: 'https://192.168.0.110:8080/oauth/api/v1'
+
+# API path
+export const login = '/public/api-name';

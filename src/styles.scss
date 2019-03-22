@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/scss/ui-style";
+/* define generic styling for material icons in mat-icon.scss */
+@import "assets/scss/mat-icon";
+/*layout scss */
+@import 'assets/scss/layout';
+/* Pagination scss*/
+@import 'assets/scss/pagination';
+/* AgGrid */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";

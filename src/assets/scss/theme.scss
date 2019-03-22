@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent: mat-palette($mat-deep-purple, 500, 900, A100);
+$my-app-warn: mat-palette($mat-red);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+.alternate-theme {
+  $alternate-primary: mat-palette($mat-indigo);
+  $alternate-accent: mat-palette($mat-orange, 400);
+
+  $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
+
+  @include angular-material-theme($alternate-theme);
+}
+
+.spinner-theme {
+  $spinner-primary: mat-palette($mat-indigo, 400, 200, A100);
+  $spinner-accent: mat-palette($mat-deep-purple, 400);
+
+  $spinner-theme: mat-light-theme($spinner-primary, $spinner-accent);
+
+  @include angular-material-theme($spinner-theme);
+}
